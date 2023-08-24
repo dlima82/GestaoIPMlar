@@ -1,26 +1,29 @@
 <!DOCTYPE html>
-<html><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
-    <title>Calculadora de Preço de Venda</title>
+<html>
+<head>
+    <title>Calculadora de PreÃ§o de Venda</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
         }
         #container {
             max-width: 600px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f5f5f5;
+            background-color: #ffcc80;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         h1 {
             text-align: center;
+            color: #e64a19;
         }
         label {
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
+            color: #333;
         }
         input {
             width: 100%;
@@ -33,22 +36,24 @@
             display: block;
             width: 100%;
             padding: 10px;
-            background-color: #007bff;
+            background-color: #e64a19;
             color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
         button:hover {
-            background-color: #0056b3;
+            background-color: #c63f17;
         }
         #listaIngredientes {
             margin-top: 10px;
+            color: #555;
         }
         #precoVenda {
             font-weight: bold;
             text-align: center;
             margin-top: 20px;
+            color: #e64a19;
         }
     </style>
     <script>
@@ -87,34 +92,45 @@
             var margemLucro = 0.30; // Margem de lucro fixa de 30%
             var precoVenda = custoTotalIngredientes + (custoTotalIngredientes * margemLucro);
 
-            document.getElementById("precoVenda").innerHTML = "Preço de Venda Sugerido para " + nomeProduto + ": R$" + precoVenda.toFixed(2);
+            document.getElementById("precoVenda").innerHTML = "PreÃ§o de Venda Sugerido para " + nomeProduto + ": R$" + precoVenda.toFixed(2);
+        }
+
+        function limparTela() {
+            ingredientes = [];
+            atualizarListaIngredientes();
+            document.getElementById("nomeProduto").value = "";
+            document.getElementById("nomeIngrediente").value = "";
+            document.getElementById("precoTotalQuiloIngrediente").value = "";
+            document.getElementById("quantidadeGramas").value = "";
+            document.getElementById("precoVenda").innerHTML = "";
         }
     </script>
 </head>
 <body>
     <div id="container">
-        <h1>Calculadora de Preço de Venda</h1>
+        <h1>Calcular  PreÃ§o de Venda $ </h1>
 
         <label for="nomeProduto">Nome do Produto:</label>
-        <input type="text" id="nomeProduto" value="pao ">
+        <input type="text" id="nomeProduto">
 
         <label for="nomeIngrediente">Nome do Ingrediente:</label>
-        <input type="text" id="nomeIngrediente" value="açucar">
+        <input type="text" id="nomeIngrediente">
 
-        <label for="precoTotalQuiloIngrediente">Preço Total do Ingrediente por Quilo (R$):</label>
-        <input type="number" id="precoTotalQuiloIngrediente" value="10">
+        <label for="precoTotalQuiloIngrediente">PreÃ§o Total do Ingrediente por Quilo (R$):</label>
+        <input type="number" id="precoTotalQuiloIngrediente">
 
         <label for="quantidadeGramas">Quantidade Utilizada (gramas):</label>
-        <input type="number" id="quantidadeGramas" value="100">
+        <input type="number" id="quantidadeGramas">
 
         <button onclick="adicionarIngrediente()">Adicionar Ingrediente</button>
 
-        <div id="listaIngredientes">sal - Custo Total: R$1.00 - Quantidade: 100g<br>açucar - Custo Total: R$1.00 - Quantidade: 100g<br></div>
+        <div id="listaIngredientes"></div>
 
-        <button onclick="calcularPrecoVenda()">Calcular Preço de Venda</button>
+        <button onclick="calcularPrecoVenda()">Calcular PreÃ§o de Venda</button>
 
-        <p id="precoVenda">Preço de Venda Sugerido para pao : R$2.60</p>
+        <p id="precoVenda"></p>
+
+        <button onclick="limparTela()">Limpar Tela</button>
     </div>
-
-
-</body></html>
+</body>
+</html>
