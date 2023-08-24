@@ -63,7 +63,53 @@
         }
     </style>
     <script>
-        // O restante do código JavaScript aqui (sem alterações)
+        var ingredientes = [];
+
+        function adicionarIngrediente() {
+            var nomeIngrediente = document.getElementById("nomeIngrediente").value;
+            var precoTotalQuiloIngrediente = parseFloat(document.getElementById("precoTotalQuiloIngrediente").value);
+            var quantidadeGramas = parseFloat(document.getElementById("quantidadeGramas").value);
+
+            var custoGrama = precoTotalQuiloIngrediente / 1000; // Custo por grama
+            var custoTotal = custoGrama * quantidadeGramas;
+
+            ingredientes.push({ nome: nomeIngrediente, custoTotal: custoTotal, quantidade: quantidadeGramas });
+
+            atualizarListaIngredientes();
+        }
+
+        function atualizarListaIngredientes() {
+            var listaIngredientes = document.getElementById("listaIngredientes");
+            listaIngredientes.innerHTML = "";
+
+            for (var i = 0; i < ingredientes.length; i++) {
+                listaIngredientes.innerHTML += ingredientes[i].nome + " - Custo Total: R$" + ingredientes[i].custoTotal.toFixed(2) + " - Quantidade: " + ingredientes[i].quantidade + "g<br>";
+            }
+        }
+
+        function calcularPrecoVenda() {
+            var nomeProduto = document.getElementById("nomeProduto").value;
+
+            var custoTotalIngredientes = 0;
+            for (var i = 0; i < ingredientes.length; i++) {
+                custoTotalIngredientes += ingredientes[i].custoTotal;
+            }
+
+            var margemLucro = 0.30; // Margem de lucro fixa de 30%
+            var precoVenda = custoTotalIngredientes + (custoTotalIngredientes * margemLucro);
+
+            document.getElementById("precoVenda").innerHTML = "Preço de Venda Sugerido para " + nomeProduto + ": R$" + precoVenda.toFixed(2);
+        }
+
+        function limparTela() {
+            ingredientes = [];
+            atualizarListaIngredientes();
+            document.getElementById("nomeProduto").value = "";
+            document.getElementById("nomeIngrediente").value = "";
+            document.getElementById("precoTotalQuiloIngrediente").value = "";
+            document.getElementById("quantidadeGramas").value = "";
+            document.getElementById("precoVenda").innerHTML = "";
+        }
     </script>
 </head>
 <body>
