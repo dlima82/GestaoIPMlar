@@ -1,142 +1,107 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Calculadora de Preço de Venda</title>
+<!-- saved from url=(0060)file:///C:/Users/diego.sobreira/Desktop/meus%20sistemas.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Links</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
         }
-        #container {
-            width: 90%;
-            max-width: 600px;
+
+        .container {
+            background: rgba(0, 0, 0, 0.7);
             padding: 20px;
-            background-color: #ffcc80;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
+            max-width: 800px;
+            margin: 20px auto;
             text-align: center;
-            color: #e64a19;
         }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #333;
+
+        h1 {
+            font-size: 24px;
         }
-        input {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+
+        ul {
+            list-style: none;
+            padding: 0;
         }
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #e64a19;
+
+        li {
+            margin: 10px 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .link-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #FFA500;
             color: #fff;
             border: none;
             border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #c63f17;
-        }
-        #listaIngredientes {
-            margin-top: 10px;
-            color: #555;
-        }
-        #precoVenda {
-            font-weight: bold;
             text-align: center;
-            margin-top: 20px;
-            color: #e64a19;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
+
+        .link-button:hover {
+            background-color: #FF8C00;
+        }
+    .style1 {font-weight: bold}
+    .style2 {
+	font-size: 16px;
+	font-weight: bold;
+}
+    .style3 {font-weight: bold}
+    .style4 {font-weight: bold}
     </style>
-    <script>
-        var ingredientes = [];
-
-        function adicionarIngrediente() {
-            var nomeIngrediente = document.getElementById("nomeIngrediente").value;
-            var precoTotalQuiloIngrediente = parseFloat(document.getElementById("precoTotalQuiloIngrediente").value);
-            var quantidadeGramas = parseFloat(document.getElementById("quantidadeGramas").value);
-
-            var custoGrama = precoTotalQuiloIngrediente / 1000; // Custo por grama
-            var custoTotal = custoGrama * quantidadeGramas;
-
-            ingredientes.push({ nome: nomeIngrediente, custoTotal: custoTotal, quantidade: quantidadeGramas });
-
-            atualizarListaIngredientes();
-        }
-
-        function atualizarListaIngredientes() {
-            var listaIngredientes = document.getElementById("listaIngredientes");
-            listaIngredientes.innerHTML = "";
-
-            for (var i = 0; i < ingredientes.length; i++) {
-                listaIngredientes.innerHTML += ingredientes[i].nome + " - Custo Total: R$" + ingredientes[i].custoTotal.toFixed(2) + " - Quantidade: " + ingredientes[i].quantidade + "g<br>";
-            }
-        }
-
-        function calcularPrecoVenda() {
-            var nomeProduto = document.getElementById("nomeProduto").value;
-
-            var custoTotalIngredientes = 0;
-            for (var i = 0; i < ingredientes.length; i++) {
-                custoTotalIngredientes += ingredientes[i].custoTotal;
-            }
-
-            var margemLucro = 0.30; // Margem de lucro fixa de 30%
-            var precoVenda = custoTotalIngredientes + (custoTotalIngredientes * margemLucro);
-
-            document.getElementById("precoVenda").innerHTML = "Preço de Venda Sugerido para " + nomeProduto + ": R$" + precoVenda.toFixed(2);
-        }
-
-        function limparTela() {
-            ingredientes = [];
-            atualizarListaIngredientes();
-            document.getElementById("nomeProduto").value = "";
-            document.getElementById("nomeIngrediente").value = "";
-            document.getElementById("precoTotalQuiloIngrediente").value = "";
-            document.getElementById("quantidadeGramas").value = "";
-            document.getElementById("precoVenda").innerHTML = "";
-        }
-    </script>
 </head>
 <body>
-    <div id="container">
-        <h1>Calculadora de Preço de Venda</h1>
+    <div class="container">
+        <h1><img src="./gerador de codigo em C_files/IPM lar copy.png" width="217" height="169"></h1>
+        <p class="style2">&nbsp;</p>
+        <ul>
+            <li>
+                <a href="https://sislar.ipmfor.ce.gov.br/" target="_blank">
+                    <button class="link-button style1">SISLAR</button>
+                </a></li>
+            <li>(PRONTUARIO ELETRONICO)</li>
+        </ul>
+        <p>&nbsp;</p>
+        <ul>
+          <li></li>
+          <li>             </li>
+          <li>
+            <a href="http://172.24.10.50/acompanhamentos/">
+              <button class="link-button style3">SIAVI</button>
+              </a></li>
+          <li><strong>(Sistema Inteligente de Acompanhamento de Visitas)</strong></li>
+        </ul>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <ul>
+          <li>            </li>
+          <li>
+            <a href="https://www.canva.com/design/DAFeyaHy_nY/w3jcok1CLaH25OAadgxJCA/view?utm_content=DAFeyaHy_nY&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=publishsharelink#1">
+              <button class="link-button style4">RELATÓRIOS DE GESTÃO</button>
+              </a></li>
+          <li><strong>(RELATÓRIOS DE GESTÃO)</strong></li>
+          <li>            </li>
+          <li>            </li>
+          <!-- Adicione mais links conforme necessário -->
+        </ul>
+</div>
 
-        <label for="nomeProduto">Nome do Produto:</label>
-        <input type="text" id="nomeProduto">
 
-        <label for="nomeIngrediente">Nome do Ingrediente:</label>
-        <input type="text" id="nomeIngrediente">
-
-        <label for="precoTotalQuiloIngrediente">Preço Total do Ingrediente por Quilo (R$):</label>
-        <input type="number" id="precoTotalQuiloIngrediente">
-
-        <label for="quantidadeGramas">Quantidade Utilizada (gramas):</label>
-        <input type="number" id="quantidadeGramas">
-
-        <button onclick="adicionarIngrediente()">Adicionar Ingrediente</button>
-
-        <div id="listaIngredientes"></div>
-
-        <button onclick="calcularPrecoVenda()">Calcular Preço de Venda</button>
-
-        <p id="precoVenda"></p>
-
-        <button onclick="limparTela()">Limpar Tela</button>
-    </div>
-</body>
-</html>
+</body></html>
